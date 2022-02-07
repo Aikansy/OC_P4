@@ -16,7 +16,6 @@ body {
     margin: 0
 }
 
-article,
 aside,
 details,
 figcaption,
@@ -29,7 +28,13 @@ menu,
 nav,
 section,
 summary {
-    display: block
+    display: block;
+}
+
+article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 audio,
@@ -52,11 +57,6 @@ template {
 
 a {
     background-color: transparent
-}
-
-a:active,
-a:hover {
-    outline: 0
 }
 
 abbr[title] {
@@ -1435,9 +1435,11 @@ img {
 .img-responsive,
 .thumbnail a>img,
 .thumbnail>img {
-    display: block;
-    max-width: 100%;
-    height: auto
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
 }
 
 .img-rounded {
@@ -2011,8 +2013,8 @@ pre code {
 }
 
 .row {
-    margin-right: -15px;
-    margin-left: -15px
+    margin-right: 0px;
+    margin-left: 0px
 }
 
 .col-lg-1,
@@ -2065,8 +2067,8 @@ pre code {
 .col-xs-9 {
     position: relative;
     min-height: 1px;
-    padding-right: 15px;
-    padding-left: 15px
+    padding-right: 0px;
+    padding-left: 0px;
 }
 
 .col-xs-1,
@@ -3065,6 +3067,9 @@ table th[class*=col-] {
     .table-responsive>.table-bordered>tfoot>tr:last-child>th {
         border-bottom: 0
     }
+    .block-4-thumbnail {
+        margin-top: 50px;
+    }
 }
 
 fieldset {
@@ -3157,7 +3162,6 @@ output {
 
 .form-control:focus {
     border-color: #66afe9;
-    outline: 0;
     -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, .6);
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, .6)
 }
@@ -3686,17 +3690,9 @@ textarea.input-lg {
     outline-offset: -2px
 }
 
-.btn.focus,
-.btn:focus,
-.btn:hover {
-    color: #333;
-    text-decoration: none
-}
-
 .btn.active,
 .btn:active {
     background-image: none;
-    outline: 0;
     -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
     box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125)
 }
@@ -4296,10 +4292,6 @@ tbody.collapse.in {
     position: relative
 }
 
-.dropdown-toggle:focus {
-    outline: 0
-}
-
 .dropdown-menu {
     position: absolute;
     top: 100%;
@@ -4358,7 +4350,6 @@ tbody.collapse.in {
     color: #fff;
     text-decoration: none;
     background-color: #337ab7;
-    outline: 0
 }
 
 .dropdown-menu>.disabled>a,
@@ -4378,10 +4369,6 @@ tbody.collapse.in {
 
 .open>.dropdown-menu {
     display: block
-}
-
-.open>a {
-    outline: 0
 }
 
 .dropdown-menu-right {
@@ -4526,11 +4513,6 @@ tbody.collapse.in {
 .btn-group>.btn-group:last-child:not(:first-child)>.btn:first-child {
     border-top-left-radius: 0;
     border-bottom-left-radius: 0
-}
-
-.btn-group .dropdown-toggle:active,
-.btn-group.open .dropdown-toggle {
-    outline: 0
 }
 
 .btn-group>.btn+.dropdown-toggle {
@@ -5223,10 +5205,6 @@ textarea.input-group-sm>.input-group-btn>.btn {
     border-radius: 4px
 }
 
-.navbar-toggle:focus {
-    outline: 0
-}
-
 .navbar-toggle .icon-bar {
     display: block;
     width: 22px;
@@ -5251,7 +5229,8 @@ textarea.input-group-sm>.input-group-btn>.btn {
 .navbar-nav>li>a {
     padding-top: 10px;
     padding-bottom: 10px;
-    line-height: 20px
+    line-height: 20px;
+    width: 100%;
 }
 
 @media (max-width:767px) {
@@ -6128,9 +6107,11 @@ a.thumbnail:hover {
 }
 
 .alert-warning {
-    color: #8a6d3b;
-    background-color: #fcf8e3;
-    border-color: #faebcc
+    color: #FFE131;
+    background-color: #242424;
+    border-color: #FFE131;
+    font-size: 14px;
+    font-weight: bold;
 }
 
 .alert-warning hr {
@@ -7077,7 +7058,6 @@ button.close {
     display: none;
     overflow: hidden;
     -webkit-overflow-scrolling: touch;
-    outline: 0
 }
 
 .modal.fade .modal-dialog {
@@ -7116,7 +7096,6 @@ button.close {
     border: 1px solid #999;
     border: 1px solid rgba(0, 0, 0, .2);
     border-radius: 6px;
-    outline: 0;
     -webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, .5);
     box-shadow: 0 3px 9px rgba(0, 0, 0, .5)
 }
@@ -7620,7 +7599,6 @@ button.close {
     color: #fff;
     text-decoration: none;
     filter: alpha(opacity=90);
-    outline: 0;
     opacity: .9
 }
 
@@ -7682,7 +7660,7 @@ button.close {
     margin: 1px;
     text-indent: -999px;
     cursor: pointer;
-    background-color: #000\9;
+    background-color: #000;
     background-color: rgba(0, 0, 0, 0);
     border: 1px solid #fff;
     border-radius: 10px
